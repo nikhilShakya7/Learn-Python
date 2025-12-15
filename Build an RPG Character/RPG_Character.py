@@ -1,7 +1,11 @@
 full_dot = '●'
 empty_dot = '○'
 
-def create_character(name, strength, intelligence, charisma):
+def create_character():
+    name=input("Enter your character name:")
+    strength=int(input("Enter your character strength:"))
+    intelligence=int(input("Enter your character intelligence:"))
+    charisma=int(input("Enter your character charisma:"))
     if not isinstance(name, str):
         return 'The character name should be a string'
 
@@ -12,7 +16,7 @@ def create_character(name, strength, intelligence, charisma):
         return 'The character name should not contain spaces'
 
     stats = {'STR': strength, 'INT': intelligence, 'CHA': charisma}
-
+    
     for stat in stats.values():
         if not isinstance(stat, int):
             return 'All stats should be integers'
@@ -35,4 +39,4 @@ def create_character(name, strength, intelligence, charisma):
 
 
 # Test
-print(create_character("ren", 4, 2, 1))
+print(create_character())
